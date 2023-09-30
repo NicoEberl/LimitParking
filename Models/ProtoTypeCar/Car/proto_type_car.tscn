@@ -177,7 +177,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_668gu")
 
-[node name="ProtoTypeCar" type="VehicleBody3D"]
+[node name="ProtoTypeCar" type="VehicleBody3D" groups=["car"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0105572, 0.0199375, -0.0384526)
 script = ExtResource("1_d3dud")
 
 [node name="BasicCarShape" type="MeshInstance3D" parent="."]

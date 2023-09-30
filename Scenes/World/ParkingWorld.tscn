@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://b4ka1pdheow3n"]
 
-[ext_resource type="PackedScene" uid="uid://c7lnjwhdy2b8d" path="res://Models/ProtoTypeCar/Car/proto_type_car.tscn" id="1_05y3v"]
 [ext_resource type="PackedScene" uid="uid://lav4r0bkq1ky" path="res://Models/ProtoTypeLight/LightPole.tscn" id="2_vo3ln"]
 [ext_resource type="PackedScene" uid="uid://dqql06tr1i8g1" path="res://Models/ProtoTypePole/Pole.tscn" id="3_fggjv"]
 [ext_resource type="PackedScene" uid="uid://2q6gsf55le8f" path="res://Scenes/ParkingSpace/ParkingSpace.tscn" id="4_6slbm"]
 [ext_resource type="PackedScene" uid="uid://bsxnrt04qsm1m" path="res://Scenes/Spawner/Spawner.tscn" id="5_nr5vk"]
 [ext_resource type="Script" path="res://Scenes/World/Scripts/Spawner.cs" id="5_yy50u"]
+[ext_resource type="PackedScene" uid="uid://ck8sroulapw2r" path="res://Scenes/Player/Player.tscn" id="6_hotdx"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ik0a2"]
 ground_color = Color(0.215686, 0.482353, 0.827451, 1)
@@ -32,11 +32,8 @@ size = Vector3(50, 2, 50)
 
 [node name="ParkingWorld" type="Node3D"]
 
-[node name="ProtoTypeCar" parent="." groups=["car"] instance=ExtResource("1_05y3v")]
-transform = Transform3D(-0.0851909, 0, -0.996365, 0, 1, 0, 0.996365, 0, -0.0851909, 8.27276, 0.712492, -26.4148)
-
-[node name="Camera3D" type="Camera3D" parent="ProtoTypeCar"]
-transform = Transform3D(-1, 6.69697e-08, -5.61943e-08, 0, 0.642788, 0.766044, 8.74228e-08, 0.766044, -0.642788, 0, 11.9276, -6.8078)
+[node name="Player" parent="." instance=ExtResource("6_hotdx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.683286, 1.21523, 13.8687)
 
 [node name="ParkingSpace" parent="." instance=ExtResource("4_6slbm")]
 transform = Transform3D(-0.0220068, 0, 0.999758, 0, 1, 0, -0.999758, 0, -0.0220068, -0.0321765, 0.891963, -1.08184)
@@ -804,27 +801,1875 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 135.919)
 script = ExtResource("5_yy50u")
 
 [node name="Spawner" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -37.0604)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 109.615)
 
 [node name="Spawner2" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -34.2349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 112.44)
 
 [node name="Spawner3" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -31.1814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 115.494)
 
 [node name="Spawner4" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -28.1256)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 118.549)
 
 [node name="Spawner5" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -25.0661)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 121.609)
 
 [node name="Spawner6" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -22.2407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 124.434)
 
 [node name="Spawner7" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -19.1871)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 127.488)
 
 [node name="Spawner8" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -16.1313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 130.544)
+
+[node name="Spawner9" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 109.615)
+
+[node name="Spawner10" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 112.44)
+
+[node name="Spawner11" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 115.494)
+
+[node name="Spawner12" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 118.549)
+
+[node name="Spawner13" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 121.609)
+
+[node name="Spawner14" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 124.434)
+
+[node name="Spawner15" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 127.488)
+
+[node name="Spawner16" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 130.544)
+
+[node name="Spawner17" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 68.6095)
+
+[node name="Spawner18" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 71.4349)
+
+[node name="Spawner19" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 74.4885)
+
+[node name="Spawner20" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 77.5443)
+
+[node name="Spawner21" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 80.6037)
+
+[node name="Spawner22" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 83.4292)
+
+[node name="Spawner23" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 86.4827)
+
+[node name="Spawner24" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 89.5386)
+
+[node name="Spawner25" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 68.6095)
+
+[node name="Spawner26" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 71.4349)
+
+[node name="Spawner27" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 74.4885)
+
+[node name="Spawner28" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 77.5443)
+
+[node name="Spawner29" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 80.6037)
+
+[node name="Spawner30" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 83.4292)
+
+[node name="Spawner31" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 86.4827)
+
+[node name="Spawner32" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 89.5386)
+
+[node name="Spawner33" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 33.2262)
+
+[node name="Spawner34" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 36.0516)
+
+[node name="Spawner35" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 39.1052)
+
+[node name="Spawner36" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 42.161)
+
+[node name="Spawner37" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 45.2204)
+
+[node name="Spawner38" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 48.0459)
+
+[node name="Spawner39" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 51.0994)
+
+[node name="Spawner40" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 54.1552)
+
+[node name="Spawner41" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 33.2262)
+
+[node name="Spawner42" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 36.0516)
+
+[node name="Spawner43" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 39.1052)
+
+[node name="Spawner44" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 42.161)
+
+[node name="Spawner45" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 45.2204)
+
+[node name="Spawner46" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 48.0459)
+
+[node name="Spawner47" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 51.0994)
+
+[node name="Spawner48" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 54.1552)
+
+[node name="Spawner49" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 0.44754)
+
+[node name="Spawner50" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 3.27297)
+
+[node name="Spawner51" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 6.32655)
+
+[node name="Spawner52" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 9.38234)
+
+[node name="Spawner53" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 12.4418)
+
+[node name="Spawner54" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 15.2672)
+
+[node name="Spawner55" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 18.3208)
+
+[node name="Spawner56" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 21.3766)
+
+[node name="Spawner57" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 0.44754)
+
+[node name="Spawner58" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 3.27297)
+
+[node name="Spawner59" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 6.32655)
+
+[node name="Spawner60" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 9.38234)
+
+[node name="Spawner61" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 12.4418)
+
+[node name="Spawner62" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 15.2672)
+
+[node name="Spawner63" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 18.3208)
+
+[node name="Spawner64" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, 21.3766)
+
+[node name="Spawner65" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -35.1275)
+
+[node name="Spawner66" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -32.3021)
+
+[node name="Spawner67" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -29.2485)
+
+[node name="Spawner68" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -26.1927)
+
+[node name="Spawner69" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -23.1333)
+
+[node name="Spawner70" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -20.3078)
+
+[node name="Spawner71" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -17.2543)
+
+[node name="Spawner72" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -14.1985)
+
+[node name="Spawner73" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -35.1275)
+
+[node name="Spawner74" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -32.3021)
+
+[node name="Spawner75" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -29.2485)
+
+[node name="Spawner76" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -26.1927)
+
+[node name="Spawner77" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -23.1333)
+
+[node name="Spawner78" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -20.3078)
+
+[node name="Spawner79" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -17.2543)
+
+[node name="Spawner80" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -14.1985)
+
+[node name="Spawner81" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -68.5227)
+
+[node name="Spawner82" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -65.6972)
+
+[node name="Spawner83" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -62.6437)
+
+[node name="Spawner84" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -59.5879)
+
+[node name="Spawner85" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -56.5284)
+
+[node name="Spawner86" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -53.703)
+
+[node name="Spawner87" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -50.6494)
+
+[node name="Spawner88" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -47.5936)
+
+[node name="Spawner89" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -68.5227)
+
+[node name="Spawner90" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -65.6972)
+
+[node name="Spawner91" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -62.6437)
+
+[node name="Spawner92" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -59.5879)
+
+[node name="Spawner93" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -56.5284)
+
+[node name="Spawner94" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -53.703)
+
+[node name="Spawner95" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -50.6494)
+
+[node name="Spawner96" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -47.5936)
+
+[node name="Spawner97" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -100.634)
+
+[node name="Spawner98" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -97.8091)
+
+[node name="Spawner99" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -94.7555)
+
+[node name="Spawner100" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -91.6997)
+
+[node name="Spawner101" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -88.6402)
+
+[node name="Spawner102" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -85.8148)
+
+[node name="Spawner103" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -82.7612)
+
+[node name="Spawner104" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -79.7054)
+
+[node name="Spawner105" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -100.634)
+
+[node name="Spawner106" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -97.8091)
+
+[node name="Spawner107" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -94.7555)
+
+[node name="Spawner108" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -91.6997)
+
+[node name="Spawner109" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -88.6402)
+
+[node name="Spawner110" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -85.8148)
+
+[node name="Spawner111" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -82.7612)
+
+[node name="Spawner112" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -79.7054)
+
+[node name="Spawner113" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -131.297)
+
+[node name="Spawner114" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -128.471)
+
+[node name="Spawner115" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -125.418)
+
+[node name="Spawner116" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -122.362)
+
+[node name="Spawner117" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -119.302)
+
+[node name="Spawner118" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -116.477)
+
+[node name="Spawner119" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -113.423)
+
+[node name="Spawner120" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -110.367)
+
+[node name="Spawner121" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -131.297)
+
+[node name="Spawner122" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -128.471)
+
+[node name="Spawner123" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -125.418)
+
+[node name="Spawner124" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -122.362)
+
+[node name="Spawner125" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -119.302)
+
+[node name="Spawner126" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -116.477)
+
+[node name="Spawner127" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -113.423)
+
+[node name="Spawner128" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -110.367)
+
+[node name="Spawner129" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -131.297)
+
+[node name="Spawner130" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -128.471)
+
+[node name="Spawner131" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -125.418)
+
+[node name="Spawner132" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -122.362)
+
+[node name="Spawner133" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -119.302)
+
+[node name="Spawner134" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -116.477)
+
+[node name="Spawner135" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -113.423)
+
+[node name="Spawner136" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, -110.367)
+
+[node name="Spawner137" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -131.297)
+
+[node name="Spawner138" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -128.471)
+
+[node name="Spawner139" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -125.418)
+
+[node name="Spawner140" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -122.362)
+
+[node name="Spawner141" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -119.302)
+
+[node name="Spawner142" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -116.477)
+
+[node name="Spawner143" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -113.423)
+
+[node name="Spawner144" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.622, 1, -110.367)
+
+[node name="Spawner145" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -133.357)
+
+[node name="Spawner146" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -130.532)
+
+[node name="Spawner147" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -127.478)
+
+[node name="Spawner148" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -124.423)
+
+[node name="Spawner149" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -121.363)
+
+[node name="Spawner150" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -118.538)
+
+[node name="Spawner151" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -115.484)
+
+[node name="Spawner152" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -112.428)
+
+[node name="Spawner153" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -133.357)
+
+[node name="Spawner154" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -130.532)
+
+[node name="Spawner155" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -127.478)
+
+[node name="Spawner156" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -124.423)
+
+[node name="Spawner157" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -121.363)
+
+[node name="Spawner158" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -118.538)
+
+[node name="Spawner159" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -115.484)
+
+[node name="Spawner160" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -112.428)
+
+[node name="Spawner161" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -133.357)
+
+[node name="Spawner162" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -130.532)
+
+[node name="Spawner163" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -127.478)
+
+[node name="Spawner164" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -124.423)
+
+[node name="Spawner165" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -121.363)
+
+[node name="Spawner166" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -118.538)
+
+[node name="Spawner167" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -115.484)
+
+[node name="Spawner168" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -112.428)
+
+[node name="Spawner169" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -133.357)
+
+[node name="Spawner170" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -130.532)
+
+[node name="Spawner171" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -127.478)
+
+[node name="Spawner172" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -124.423)
+
+[node name="Spawner173" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -121.363)
+
+[node name="Spawner174" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -118.538)
+
+[node name="Spawner175" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -115.484)
+
+[node name="Spawner176" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -112.428)
+
+[node name="Spawner177" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -95.5742)
+
+[node name="Spawner178" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -92.7488)
+
+[node name="Spawner179" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -89.6953)
+
+[node name="Spawner180" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -86.6395)
+
+[node name="Spawner181" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -83.58)
+
+[node name="Spawner182" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -80.7546)
+
+[node name="Spawner183" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -77.701)
+
+[node name="Spawner184" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -74.6452)
+
+[node name="Spawner185" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -95.5742)
+
+[node name="Spawner186" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -92.7488)
+
+[node name="Spawner187" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -89.6953)
+
+[node name="Spawner188" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -86.6395)
+
+[node name="Spawner189" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -83.58)
+
+[node name="Spawner190" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -80.7546)
+
+[node name="Spawner191" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -77.701)
+
+[node name="Spawner192" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -74.6452)
+
+[node name="Spawner193" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -95.5742)
+
+[node name="Spawner194" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -92.7488)
+
+[node name="Spawner195" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -89.6953)
+
+[node name="Spawner196" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -86.6395)
+
+[node name="Spawner197" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -83.58)
+
+[node name="Spawner198" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -80.7546)
+
+[node name="Spawner199" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -77.701)
+
+[node name="Spawner200" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -74.6452)
+
+[node name="Spawner201" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -95.5742)
+
+[node name="Spawner202" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -92.7488)
+
+[node name="Spawner203" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -89.6953)
+
+[node name="Spawner204" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -86.6395)
+
+[node name="Spawner205" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -83.58)
+
+[node name="Spawner206" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -80.7546)
+
+[node name="Spawner207" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -77.701)
+
+[node name="Spawner208" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -74.6452)
+
+[node name="Spawner209" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -66.7818)
+
+[node name="Spawner210" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -63.9564)
+
+[node name="Spawner211" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -60.9028)
+
+[node name="Spawner212" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -57.847)
+
+[node name="Spawner213" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -54.7876)
+
+[node name="Spawner214" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -51.9621)
+
+[node name="Spawner215" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -48.9085)
+
+[node name="Spawner216" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -45.8527)
+
+[node name="Spawner217" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -66.7818)
+
+[node name="Spawner218" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -63.9564)
+
+[node name="Spawner219" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -60.9028)
+
+[node name="Spawner220" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -57.847)
+
+[node name="Spawner221" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -54.7876)
+
+[node name="Spawner222" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -51.9621)
+
+[node name="Spawner223" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -48.9085)
+
+[node name="Spawner224" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -45.8527)
+
+[node name="Spawner225" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -66.7818)
+
+[node name="Spawner226" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -63.9564)
+
+[node name="Spawner227" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -60.9028)
+
+[node name="Spawner228" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -57.847)
+
+[node name="Spawner229" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -54.7876)
+
+[node name="Spawner230" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -51.9621)
+
+[node name="Spawner231" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -48.9085)
+
+[node name="Spawner232" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -45.8527)
+
+[node name="Spawner233" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -66.7818)
+
+[node name="Spawner234" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -63.9564)
+
+[node name="Spawner235" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -60.9028)
+
+[node name="Spawner236" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -57.847)
+
+[node name="Spawner237" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -54.7876)
+
+[node name="Spawner238" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -51.9621)
+
+[node name="Spawner239" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -48.9085)
+
+[node name="Spawner240" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -45.8527)
+
+[node name="Spawner241" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -25.5661)
+
+[node name="Spawner242" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -22.7407)
+
+[node name="Spawner243" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -19.6871)
+
+[node name="Spawner244" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -16.6313)
+
+[node name="Spawner245" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -13.5719)
+
+[node name="Spawner246" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -10.7464)
+
+[node name="Spawner247" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -7.69286)
+
+[node name="Spawner248" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -4.63706)
+
+[node name="Spawner249" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -25.5661)
+
+[node name="Spawner250" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -22.7407)
+
+[node name="Spawner251" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -19.6871)
+
+[node name="Spawner252" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -16.6313)
+
+[node name="Spawner253" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -13.5719)
+
+[node name="Spawner254" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -10.7464)
+
+[node name="Spawner255" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -7.69286)
+
+[node name="Spawner256" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -4.63706)
+
+[node name="Spawner257" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -25.5661)
+
+[node name="Spawner258" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -22.7407)
+
+[node name="Spawner259" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -19.6871)
+
+[node name="Spawner260" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -16.6313)
+
+[node name="Spawner261" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -13.5719)
+
+[node name="Spawner262" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -10.7464)
+
+[node name="Spawner263" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -7.69286)
+
+[node name="Spawner264" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, -4.63706)
+
+[node name="Spawner265" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -25.5661)
+
+[node name="Spawner266" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -22.7407)
+
+[node name="Spawner267" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -19.6871)
+
+[node name="Spawner268" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -16.6313)
+
+[node name="Spawner269" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -13.5719)
+
+[node name="Spawner270" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -10.7464)
+
+[node name="Spawner271" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -7.69286)
+
+[node name="Spawner272" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, -4.63706)
+
+[node name="Spawner305" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 31.0598)
+
+[node name="Spawner306" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 33.8852)
+
+[node name="Spawner307" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 36.9388)
+
+[node name="Spawner308" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 39.9946)
+
+[node name="Spawner309" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 43.0541)
+
+[node name="Spawner310" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 45.8795)
+
+[node name="Spawner311" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 48.9331)
+
+[node name="Spawner312" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 51.9889)
+
+[node name="Spawner313" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 31.0598)
+
+[node name="Spawner314" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 33.8852)
+
+[node name="Spawner315" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 36.9388)
+
+[node name="Spawner316" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 39.9946)
+
+[node name="Spawner317" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 43.0541)
+
+[node name="Spawner318" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 45.8795)
+
+[node name="Spawner319" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 48.9331)
+
+[node name="Spawner320" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 51.9889)
+
+[node name="Spawner321" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 31.0598)
+
+[node name="Spawner322" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 33.8852)
+
+[node name="Spawner323" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 36.9388)
+
+[node name="Spawner324" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 39.9946)
+
+[node name="Spawner325" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 43.0541)
+
+[node name="Spawner326" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 45.8795)
+
+[node name="Spawner327" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 48.9331)
+
+[node name="Spawner328" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 51.9889)
+
+[node name="Spawner329" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 31.0598)
+
+[node name="Spawner330" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 33.8852)
+
+[node name="Spawner331" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 36.9388)
+
+[node name="Spawner332" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 39.9946)
+
+[node name="Spawner333" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 43.0541)
+
+[node name="Spawner334" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 45.8795)
+
+[node name="Spawner335" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 48.9331)
+
+[node name="Spawner336" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 51.9889)
+
+[node name="Spawner337" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 60.5284)
+
+[node name="Spawner338" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 63.3538)
+
+[node name="Spawner339" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 66.4074)
+
+[node name="Spawner340" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 69.4632)
+
+[node name="Spawner341" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 72.5226)
+
+[node name="Spawner342" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 75.3481)
+
+[node name="Spawner343" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 78.4016)
+
+[node name="Spawner344" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 81.4574)
+
+[node name="Spawner345" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 60.5284)
+
+[node name="Spawner346" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 63.3538)
+
+[node name="Spawner347" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 66.4074)
+
+[node name="Spawner348" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 69.4632)
+
+[node name="Spawner349" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 72.5226)
+
+[node name="Spawner350" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 75.3481)
+
+[node name="Spawner351" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 78.4016)
+
+[node name="Spawner352" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 81.4574)
+
+[node name="Spawner353" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 60.5284)
+
+[node name="Spawner354" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 63.3538)
+
+[node name="Spawner355" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 66.4074)
+
+[node name="Spawner356" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 69.4632)
+
+[node name="Spawner357" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 72.5226)
+
+[node name="Spawner358" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 75.3481)
+
+[node name="Spawner359" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 78.4016)
+
+[node name="Spawner360" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 81.4574)
+
+[node name="Spawner361" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 60.5284)
+
+[node name="Spawner362" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 63.3538)
+
+[node name="Spawner363" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 66.4074)
+
+[node name="Spawner364" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 69.4632)
+
+[node name="Spawner365" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 72.5226)
+
+[node name="Spawner366" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 75.3481)
+
+[node name="Spawner367" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 78.4016)
+
+[node name="Spawner368" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 81.4574)
+
+[node name="Spawner369" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 108.633)
+
+[node name="Spawner370" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 111.458)
+
+[node name="Spawner371" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 114.512)
+
+[node name="Spawner372" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 117.568)
+
+[node name="Spawner373" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 120.627)
+
+[node name="Spawner374" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 123.453)
+
+[node name="Spawner375" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 126.506)
+
+[node name="Spawner376" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 129.562)
+
+[node name="Spawner377" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 108.633)
+
+[node name="Spawner378" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 111.458)
+
+[node name="Spawner379" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 114.512)
+
+[node name="Spawner380" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 117.568)
+
+[node name="Spawner381" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 120.627)
+
+[node name="Spawner382" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 123.453)
+
+[node name="Spawner383" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 126.506)
+
+[node name="Spawner384" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 129.562)
+
+[node name="Spawner385" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 108.633)
+
+[node name="Spawner386" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 111.458)
+
+[node name="Spawner387" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 114.512)
+
+[node name="Spawner388" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 117.568)
+
+[node name="Spawner389" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 120.627)
+
+[node name="Spawner390" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 123.453)
+
+[node name="Spawner391" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 126.506)
+
+[node name="Spawner392" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.29318, 1, 129.562)
+
+[node name="Spawner393" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 108.633)
+
+[node name="Spawner394" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 111.458)
+
+[node name="Spawner395" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 114.512)
+
+[node name="Spawner396" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 117.568)
+
+[node name="Spawner397" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 120.627)
+
+[node name="Spawner398" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 123.453)
+
+[node name="Spawner399" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 126.506)
+
+[node name="Spawner400" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.37954, 1, 129.562)
+
+[node name="Spawner401" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 111.43)
+
+[node name="Spawner402" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 114.256)
+
+[node name="Spawner403" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 117.309)
+
+[node name="Spawner404" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 120.365)
+
+[node name="Spawner405" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 123.425)
+
+[node name="Spawner406" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 126.25)
+
+[node name="Spawner407" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 129.304)
+
+[node name="Spawner408" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 132.359)
+
+[node name="Spawner409" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 111.43)
+
+[node name="Spawner410" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 114.256)
+
+[node name="Spawner411" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 117.309)
+
+[node name="Spawner412" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 120.365)
+
+[node name="Spawner413" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 123.425)
+
+[node name="Spawner414" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 126.25)
+
+[node name="Spawner415" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 129.304)
+
+[node name="Spawner416" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 132.359)
+
+[node name="Spawner417" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 111.43)
+
+[node name="Spawner418" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 114.256)
+
+[node name="Spawner419" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 117.309)
+
+[node name="Spawner420" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 120.365)
+
+[node name="Spawner421" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 123.425)
+
+[node name="Spawner422" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 126.25)
+
+[node name="Spawner423" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 129.304)
+
+[node name="Spawner424" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 132.359)
+
+[node name="Spawner425" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 111.43)
+
+[node name="Spawner426" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 114.256)
+
+[node name="Spawner427" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 117.309)
+
+[node name="Spawner428" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 120.365)
+
+[node name="Spawner429" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 123.425)
+
+[node name="Spawner430" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 126.25)
+
+[node name="Spawner431" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 129.304)
+
+[node name="Spawner432" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 132.359)
+
+[node name="Spawner433" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 61.3075)
+
+[node name="Spawner434" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 64.133)
+
+[node name="Spawner435" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 67.1865)
+
+[node name="Spawner436" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 70.2423)
+
+[node name="Spawner437" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 73.3018)
+
+[node name="Spawner438" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 76.1272)
+
+[node name="Spawner439" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 79.1808)
+
+[node name="Spawner440" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 82.2366)
+
+[node name="Spawner441" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 61.3075)
+
+[node name="Spawner442" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 64.133)
+
+[node name="Spawner443" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 67.1865)
+
+[node name="Spawner444" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 70.2423)
+
+[node name="Spawner445" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 73.3018)
+
+[node name="Spawner446" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 76.1272)
+
+[node name="Spawner447" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 79.1808)
+
+[node name="Spawner448" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 82.2366)
+
+[node name="Spawner449" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 61.3075)
+
+[node name="Spawner450" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 64.133)
+
+[node name="Spawner451" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 67.1865)
+
+[node name="Spawner452" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 70.2423)
+
+[node name="Spawner453" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 73.3018)
+
+[node name="Spawner454" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 76.1272)
+
+[node name="Spawner455" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 79.1808)
+
+[node name="Spawner456" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 82.2366)
+
+[node name="Spawner457" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 61.3075)
+
+[node name="Spawner458" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 64.133)
+
+[node name="Spawner459" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 67.1865)
+
+[node name="Spawner460" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 70.2423)
+
+[node name="Spawner461" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 73.3018)
+
+[node name="Spawner462" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 76.1272)
+
+[node name="Spawner463" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 79.1808)
+
+[node name="Spawner464" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 82.2366)
+
+[node name="Spawner465" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 35.0243)
+
+[node name="Spawner466" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 37.8497)
+
+[node name="Spawner467" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 40.9033)
+
+[node name="Spawner468" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 43.9591)
+
+[node name="Spawner469" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 47.0185)
+
+[node name="Spawner470" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 49.844)
+
+[node name="Spawner471" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 52.8975)
+
+[node name="Spawner472" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 55.9533)
+
+[node name="Spawner473" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 35.0243)
+
+[node name="Spawner474" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 37.8497)
+
+[node name="Spawner475" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 40.9033)
+
+[node name="Spawner476" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 43.9591)
+
+[node name="Spawner477" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 47.0185)
+
+[node name="Spawner478" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 49.844)
+
+[node name="Spawner479" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 52.8975)
+
+[node name="Spawner480" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 55.9533)
+
+[node name="Spawner481" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 35.0243)
+
+[node name="Spawner482" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 37.8497)
+
+[node name="Spawner483" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 40.9033)
+
+[node name="Spawner484" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 43.9591)
+
+[node name="Spawner485" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 47.0185)
+
+[node name="Spawner486" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 49.844)
+
+[node name="Spawner487" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 52.8975)
+
+[node name="Spawner488" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 55.9533)
+
+[node name="Spawner489" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 35.0243)
+
+[node name="Spawner490" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 37.8497)
+
+[node name="Spawner491" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 40.9033)
+
+[node name="Spawner492" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 43.9591)
+
+[node name="Spawner493" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 47.0185)
+
+[node name="Spawner494" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 49.844)
+
+[node name="Spawner495" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 52.8975)
+
+[node name="Spawner496" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 55.9533)
+
+[node name="Spawner497" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -2.68821)
+
+[node name="Spawner498" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 0.137203)
+
+[node name="Spawner499" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 3.19079)
+
+[node name="Spawner500" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 6.24659)
+
+[node name="Spawner501" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 9.30604)
+
+[node name="Spawner502" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 12.1315)
+
+[node name="Spawner503" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 15.1851)
+
+[node name="Spawner504" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 18.2409)
+
+[node name="Spawner505" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -2.68821)
+
+[node name="Spawner506" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 0.137203)
+
+[node name="Spawner507" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 3.19079)
+
+[node name="Spawner508" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 6.24659)
+
+[node name="Spawner509" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 9.30604)
+
+[node name="Spawner510" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 12.1315)
+
+[node name="Spawner511" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 15.1851)
+
+[node name="Spawner512" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 18.2409)
+
+[node name="Spawner513" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -2.68821)
+
+[node name="Spawner514" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 0.137203)
+
+[node name="Spawner515" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 3.19079)
+
+[node name="Spawner516" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 6.24659)
+
+[node name="Spawner517" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 9.30604)
+
+[node name="Spawner518" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 12.1315)
+
+[node name="Spawner519" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 15.1851)
+
+[node name="Spawner520" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, 18.2409)
+
+[node name="Spawner521" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -2.68821)
+
+[node name="Spawner522" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 0.137203)
+
+[node name="Spawner523" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 3.19079)
+
+[node name="Spawner524" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 6.24659)
+
+[node name="Spawner525" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 9.30604)
+
+[node name="Spawner526" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 12.1315)
+
+[node name="Spawner527" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 15.1851)
+
+[node name="Spawner528" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, 18.2409)
+
+[node name="Spawner529" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -29.8678)
+
+[node name="Spawner530" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -27.0424)
+
+[node name="Spawner531" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -23.9888)
+
+[node name="Spawner532" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -20.933)
+
+[node name="Spawner533" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -17.8736)
+
+[node name="Spawner534" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -15.0481)
+
+[node name="Spawner535" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -11.9946)
+
+[node name="Spawner536" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -8.93876)
+
+[node name="Spawner537" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -29.8678)
+
+[node name="Spawner538" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -27.0424)
+
+[node name="Spawner539" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -23.9888)
+
+[node name="Spawner540" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -20.933)
+
+[node name="Spawner541" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -17.8736)
+
+[node name="Spawner542" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -15.0481)
+
+[node name="Spawner543" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -11.9946)
+
+[node name="Spawner544" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -8.93876)
+
+[node name="Spawner545" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -29.8678)
+
+[node name="Spawner546" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -27.0424)
+
+[node name="Spawner547" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -23.9888)
+
+[node name="Spawner548" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -20.933)
+
+[node name="Spawner549" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -17.8736)
+
+[node name="Spawner550" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -15.0481)
+
+[node name="Spawner551" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -11.9946)
+
+[node name="Spawner552" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -8.93876)
+
+[node name="Spawner553" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -29.8678)
+
+[node name="Spawner554" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -27.0424)
+
+[node name="Spawner555" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -23.9888)
+
+[node name="Spawner556" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -20.933)
+
+[node name="Spawner557" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -17.8736)
+
+[node name="Spawner558" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -15.0481)
+
+[node name="Spawner559" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -11.9946)
+
+[node name="Spawner560" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -8.93876)
+
+[node name="Spawner561" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -69.4934)
+
+[node name="Spawner562" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -66.668)
+
+[node name="Spawner563" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -63.6144)
+
+[node name="Spawner564" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -60.5586)
+
+[node name="Spawner565" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -57.4991)
+
+[node name="Spawner566" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -54.6737)
+
+[node name="Spawner567" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -51.6201)
+
+[node name="Spawner568" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -48.5643)
+
+[node name="Spawner569" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -69.4934)
+
+[node name="Spawner570" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -66.668)
+
+[node name="Spawner571" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -63.6144)
+
+[node name="Spawner572" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -60.5586)
+
+[node name="Spawner573" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -57.4991)
+
+[node name="Spawner574" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -54.6737)
+
+[node name="Spawner575" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -51.6201)
+
+[node name="Spawner576" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -48.5643)
+
+[node name="Spawner577" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -69.4934)
+
+[node name="Spawner578" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -66.668)
+
+[node name="Spawner579" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -63.6144)
+
+[node name="Spawner580" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -60.5586)
+
+[node name="Spawner581" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -57.4991)
+
+[node name="Spawner582" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -54.6737)
+
+[node name="Spawner583" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -51.6201)
+
+[node name="Spawner584" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -48.5643)
+
+[node name="Spawner585" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -69.4934)
+
+[node name="Spawner586" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -66.668)
+
+[node name="Spawner587" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -63.6144)
+
+[node name="Spawner588" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -60.5586)
+
+[node name="Spawner589" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -57.4991)
+
+[node name="Spawner590" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -54.6737)
+
+[node name="Spawner591" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -51.6201)
+
+[node name="Spawner592" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -48.5643)
+
+[node name="Spawner593" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -95.7549)
+
+[node name="Spawner594" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -92.9295)
+
+[node name="Spawner595" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -89.8759)
+
+[node name="Spawner596" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -86.8201)
+
+[node name="Spawner597" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -83.7607)
+
+[node name="Spawner598" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -80.9352)
+
+[node name="Spawner599" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -77.8817)
+
+[node name="Spawner600" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -74.8259)
+
+[node name="Spawner601" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -95.7549)
+
+[node name="Spawner602" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -92.9295)
+
+[node name="Spawner603" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -89.8759)
+
+[node name="Spawner604" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -86.8201)
+
+[node name="Spawner605" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -83.7607)
+
+[node name="Spawner606" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -80.9352)
+
+[node name="Spawner607" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -77.8817)
+
+[node name="Spawner608" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -74.8259)
+
+[node name="Spawner609" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -95.7549)
+
+[node name="Spawner610" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -92.9295)
+
+[node name="Spawner611" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -89.8759)
+
+[node name="Spawner612" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -86.8201)
+
+[node name="Spawner613" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -83.7607)
+
+[node name="Spawner614" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -80.9352)
+
+[node name="Spawner615" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -77.8817)
+
+[node name="Spawner616" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -74.8259)
+
+[node name="Spawner617" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -95.7549)
+
+[node name="Spawner618" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -92.9295)
+
+[node name="Spawner619" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -89.8759)
+
+[node name="Spawner620" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -86.8201)
+
+[node name="Spawner621" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -83.7607)
+
+[node name="Spawner622" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -80.9352)
+
+[node name="Spawner623" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -77.8817)
+
+[node name="Spawner624" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -74.8259)
+
+[node name="Spawner625" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -131.875)
+
+[node name="Spawner626" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -129.05)
+
+[node name="Spawner627" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -125.996)
+
+[node name="Spawner628" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -122.94)
+
+[node name="Spawner629" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -119.881)
+
+[node name="Spawner630" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -117.055)
+
+[node name="Spawner631" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -114.002)
+
+[node name="Spawner632" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -110.946)
+
+[node name="Spawner633" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -131.875)
+
+[node name="Spawner634" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -129.05)
+
+[node name="Spawner635" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -125.996)
+
+[node name="Spawner636" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -122.94)
+
+[node name="Spawner637" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -119.881)
+
+[node name="Spawner638" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -117.055)
+
+[node name="Spawner639" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -114.002)
+
+[node name="Spawner640" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -110.946)
+
+[node name="Spawner641" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -131.875)
+
+[node name="Spawner642" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -129.05)
+
+[node name="Spawner643" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -125.996)
+
+[node name="Spawner644" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -122.94)
+
+[node name="Spawner645" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -119.881)
+
+[node name="Spawner646" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -117.055)
+
+[node name="Spawner647" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -114.002)
+
+[node name="Spawner648" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.4041, 1, -110.946)
+
+[node name="Spawner649" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -131.875)
+
+[node name="Spawner650" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -129.05)
+
+[node name="Spawner651" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -125.996)
+
+[node name="Spawner652" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -122.94)
+
+[node name="Spawner653" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -119.881)
+
+[node name="Spawner654" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -117.055)
+
+[node name="Spawner655" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -114.002)
+
+[node name="Spawner656" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -110.946)
 
 [node name="Objects" type="Node" parent="."]

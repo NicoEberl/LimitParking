@@ -1,12 +1,11 @@
 using Godot;
 using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+
 
 public partial class Spawner : Node
 {
 	[Export]
-	private int amountOfFreeParkingSpaces = 2;
+	private int amountOfFreeParkingSpaces = 30;
 	private PackedScene sceneStaticCar;
 	private PackedScene sceneFreeParkingSpace;
 
@@ -17,12 +16,8 @@ public partial class Spawner : Node
 		// Get all available spawners
 		spawners = GetTree().GetNodesInGroup("spawn");
 
-		GD.Print(spawners);
-
 		sceneStaticCar = GD.Load<PackedScene>("res://Models/ProtoTypeStaticCar/StaticCar.tscn");
 		sceneFreeParkingSpace = GD.Load<PackedScene>("res://Scenes/ParkingSpace/ParkingSpace.tscn");
-
-		GD.Print(sceneFreeParkingSpace);
 
 		// Then shuffle and spawn either a static vehicle or a free parking space;
 		SpawnInParkingSpace();
@@ -45,6 +40,8 @@ public partial class Spawner : Node
 		{
 			var nodeFreeParkingSpace = sceneFreeParkingSpace.Instantiate();
 			spawners[i].AddChild(nodeFreeParkingSpace);
+
+			GD.Print("Create free parking space");
 		}
 
 		for (int i = amountOfFreeParkingSpaces +1; i < spawners.Count; i++)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck8sroulapw2r"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_ug0k3"]
+[ext_resource type="PackedScene" uid="uid://c7lnjwhdy2b8d" path="res://Models/ProtoTypeCar/Car/proto_type_car.tscn" id="2_df3p6"]
+
+[node name="Player" type="Node3D"]
+transform = Transform3D(0.999999, -0.000511048, 0.00104605, 0.000512331, 0.999999, -0.00122886, -0.00104542, 0.00122939, 0.999999, 0, 0, 0)
+script = ExtResource("1_ug0k3")
+
+[node name="ProtoTypeCar" parent="." instance=ExtResource("2_df3p6")]
+
+[node name="Camera3D" type="Camera3D" parent="ProtoTypeCar"]
+transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, -0.288205, 4.49056, -5.07481)

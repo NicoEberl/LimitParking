@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/ParkingSpace/Scripts/ParkingSpace.cs" id="1_cdhvn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6lr5e"]
-size = Vector3(1.75342, 0.794122, 0.706405)
+size = Vector3(0.46249, 0.254167, 0.394535)
 
 [node name="ParkingSpace" type="Area3D"]
 script = ExtResource("1_cdhvn")
