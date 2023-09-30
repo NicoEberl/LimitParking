@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://lav4r0bkq1ky"]
+
+[ext_resource type="PackedScene" uid="uid://dup5eybc1gxmu" path="res://Models/ProtoTypeLight/light_pole.glb" id="1_4ie0i"]
+
+[node name="LightPole" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+
+[node name="light_pole" parent="." instance=ExtResource("1_4ie0i")]
+
+[node name="RightSpotlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.173648, 0.984808, 0, -0.984808, -0.173648, 0, 4.2878, 1.49449)
+light_color = Color(1, 0.933333, 0.788235, 1)
+light_energy = 50.0
+spot_range = 18.903
+spot_angle = 19.77
+
+[node name="LeftSpotlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.173648, 0.984808, 0, -0.984808, 0.173648, 0.000415325, 4.41853, -1.44261)
+light_color = Color(1, 0.933333, 0.788235, 1)
+light_energy = 50.0
+spot_range = 18.903
+spot_angle = 19.77

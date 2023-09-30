@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqql06tr1i8g1"]
+
+[ext_resource type="PackedScene" uid="uid://50sp086qry7i" path="res://Models/ProtoTypePole/ProtoTypePole.glb" id="1_bbfpl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wncwc"]
+size = Vector3(6.63572, 8.17517, 0.188878)
+
+[node name="Pole" type="StaticBody3D"]
+
+[node name="ProtoTypePole" parent="." instance=ExtResource("1_bbfpl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61788, 0)
+shape = SubResource("BoxShape3D_wncwc")
