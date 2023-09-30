@@ -6,7 +6,7 @@
 size = Vector3(50, 2, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf6hc"]
-albedo_color = Color(0.317647, 0.317647, 0.317647, 1)
+albedo_color = Color(1, 0.458824, 0.682353, 1)
 metallic = 0.03
 
 [sub_resource type="BoxMesh" id="BoxMesh_8iiu8"]
@@ -28,8 +28,8 @@ mesh = SubResource("BoxMesh_8iiu8")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.692219, 0.721688, 0, -0.721688, 0.692219, 0, 4.77111, 11.219)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.723196, 0.690643, 0, -0.690643, 0.723196, 0.027259, 4.45444, 4.88782)
-
 [node name="ProtoTypeCar" parent="." instance=ExtResource("1_05y3v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130109, 0, 0.211778)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.130109, 1.15077, 0.211778)
+
+[node name="Camera3D" type="Camera3D" parent="ProtoTypeCar"]
+transform = Transform3D(-0.811401, -0.403674, 0.422701, 3.26675e-09, 0.723196, 0.690643, -0.58449, 0.560388, -0.586802, 1.72851, 3.52282, -3.47879)

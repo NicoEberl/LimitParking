@@ -6,9 +6,10 @@ public partial class Car : VehicleBody3D
 	[Export]
 	private int speed = 1;
 	[Export]
-	private int mass = 40;
+	private int accellaration = 100;
 	[Export]
-	private int accellaration = 1;
+	private int BRAKE_FORCE = 15;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,22 +18,12 @@ public partial class Car : VehicleBody3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (Input.IsActionJustPressed("forward"))
-		{
-			GD.Print("FOWARD");
-		}
-		if (Input.IsActionJustPressed("backward"))
-		{
-			GD.Print("BACKWARD");
-		}
-		if (Input.IsActionJustPressed("left"))
-		{
-			GD.Print("LEFT");
-		}
-		if (Input.IsActionJustPressed("right"))
-		{
-			GD.Print("RIGHT");
-		}
+
+			float input = Input.GetAxis("backward", "forward");
+			float steering = Input.GetAxis("left", "right");
+
+			EngineForce = input * accellaration;
+			Steering = steering * 100;
 
 	}
 }
