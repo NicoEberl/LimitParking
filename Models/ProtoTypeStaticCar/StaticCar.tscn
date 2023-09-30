@@ -6,6 +6,7 @@
 size = Vector3(2.63237, 1.39754, 3.39395)
 
 [node name="StaticCar" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="ProtoTypeCar" parent="." instance=ExtResource("1_0rphk")]
 

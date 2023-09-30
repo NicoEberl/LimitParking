@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4ka1pdheow3n"]
+[gd_scene load_steps=13 format=3 uid="uid://b4ka1pdheow3n"]
 
 [ext_resource type="PackedScene" uid="uid://c7lnjwhdy2b8d" path="res://Models/ProtoTypeCar/Car/proto_type_car.tscn" id="1_05y3v"]
 [ext_resource type="PackedScene" uid="uid://lav4r0bkq1ky" path="res://Models/ProtoTypeLight/LightPole.tscn" id="2_vo3ln"]
 [ext_resource type="PackedScene" uid="uid://dqql06tr1i8g1" path="res://Models/ProtoTypePole/Pole.tscn" id="3_fggjv"]
 [ext_resource type="PackedScene" uid="uid://2q6gsf55le8f" path="res://Scenes/ParkingSpace/ParkingSpace.tscn" id="4_6slbm"]
 [ext_resource type="PackedScene" uid="uid://bsxnrt04qsm1m" path="res://Scenes/Spawner/Spawner.tscn" id="5_nr5vk"]
+[ext_resource type="Script" path="res://Scenes/World/Scripts/Spawner.cs" id="5_yy50u"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ik0a2"]
 ground_color = Color(0.215686, 0.482353, 0.827451, 1)
@@ -32,14 +33,13 @@ size = Vector3(50, 2, 50)
 [node name="ParkingWorld" type="Node3D"]
 
 [node name="ProtoTypeCar" parent="." groups=["car"] instance=ExtResource("1_05y3v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712492, -1.16646)
+transform = Transform3D(-0.0851909, 0, -0.996365, 0, 1, 0, 0.996365, 0, -0.0851909, 8.27276, 0.712492, -26.4148)
 
 [node name="Camera3D" type="Camera3D" parent="ProtoTypeCar"]
 transform = Transform3D(-1, 6.69697e-08, -5.61943e-08, 0, 0.642788, 0.766044, 8.74228e-08, 0.766044, -0.642788, 0, 11.9276, -6.8078)
 
-[node name="ParkingSpace" parent="." node_paths=PackedStringArray("car") instance=ExtResource("4_6slbm")]
+[node name="ParkingSpace" parent="." instance=ExtResource("4_6slbm")]
 transform = Transform3D(-0.0220068, 0, 0.999758, 0, 1, 0, -0.999758, 0, -0.0220068, -0.0321765, 0.891963, -1.08184)
-car = NodePath("../ProtoTypeCar")
 
 [node name="WorldEnv" type="Node" parent="."]
 
@@ -801,6 +801,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 58.2951)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 135.919)
 
 [node name="Spawner" type="Node" parent="."]
+script = ExtResource("5_yy50u")
 
 [node name="Spawner" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -37.0604)
@@ -825,3 +826,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -19.1871)
 
 [node name="Spawner8" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -16.1313)
+
+[node name="Objects" type="Node" parent="."]
