@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ka1pdheow3n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6s3h"]
+size = Vector3(50, 2, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf6hc"]
+albedo_color = Color(0.317647, 0.317647, 0.317647, 1)
+metallic = 0.03
+
+[sub_resource type="BoxMesh" id="BoxMesh_8iiu8"]
+material = SubResource("StandardMaterial3D_wf6hc")
+size = Vector3(50, 2, 50)
+
+[node name="ParkingWorld" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="CollisionMesh" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+shape = SubResource("BoxShape3D_v6s3h")
+
+[node name="GroundMesh" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_8iiu8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.692219, 0.721688, 0, -0.721688, 0.692219, 0, 4.77111, 11.219)
