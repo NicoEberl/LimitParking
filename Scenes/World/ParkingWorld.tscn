@@ -1,19 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4ka1pdheow3n"]
+[gd_scene load_steps=12 format=3 uid="uid://b4ka1pdheow3n"]
 
 [ext_resource type="PackedScene" uid="uid://c7lnjwhdy2b8d" path="res://Models/ProtoTypeCar/Car/proto_type_car.tscn" id="1_05y3v"]
 [ext_resource type="PackedScene" uid="uid://lav4r0bkq1ky" path="res://Models/ProtoTypeLight/LightPole.tscn" id="2_vo3ln"]
 [ext_resource type="PackedScene" uid="uid://dqql06tr1i8g1" path="res://Models/ProtoTypePole/Pole.tscn" id="3_fggjv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v6s3h"]
-size = Vector3(50, 2, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf6hc"]
-albedo_color = Color(0.392157, 0.380392, 0.364706, 1)
-metallic = 0.03
-
-[sub_resource type="BoxMesh" id="BoxMesh_8iiu8"]
-material = SubResource("StandardMaterial3D_wf6hc")
-size = Vector3(50, 2, 50)
+[ext_resource type="PackedScene" uid="uid://2q6gsf55le8f" path="res://Scenes/ParkingSpace/ParkingSpace.tscn" id="4_6slbm"]
+[ext_resource type="PackedScene" uid="uid://bsxnrt04qsm1m" path="res://Scenes/Spawner/Spawner.tscn" id="5_nr5vk"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ik0a2"]
 ground_color = Color(0.215686, 0.482353, 0.827451, 1)
@@ -27,12 +18,36 @@ sky = SubResource("Sky_3xr2f")
 ambient_light_source = 3
 ambient_light_color = Color(0.305882, 0.25098, 0.870588, 1)
 
-[node name="ParkingWorld" type="Node"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_v6s3h"]
+size = Vector3(50, 2, 50)
 
-[node name="ProtoTypeCar" parent="." instance=ExtResource("1_05y3v")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wf6hc"]
+albedo_color = Color(0.392157, 0.380392, 0.364706, 1)
+metallic = 0.03
+
+[sub_resource type="BoxMesh" id="BoxMesh_8iiu8"]
+material = SubResource("StandardMaterial3D_wf6hc")
+size = Vector3(50, 2, 50)
+
+[node name="ParkingWorld" type="Node3D"]
+
+[node name="ProtoTypeCar" parent="." groups=["car"] instance=ExtResource("1_05y3v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.712492, -1.16646)
 
 [node name="Camera3D" type="Camera3D" parent="ProtoTypeCar"]
 transform = Transform3D(-1, 6.69697e-08, -5.61943e-08, 0, 0.642788, 0.766044, 8.74228e-08, 0.766044, -0.642788, 0, 11.9276, -6.8078)
+
+[node name="ParkingSpace" parent="." node_paths=PackedStringArray("car") instance=ExtResource("4_6slbm")]
+transform = Transform3D(-0.0220068, 0, 0.999758, 0, 1, 0, -0.999758, 0, -0.0220068, -0.0321765, 0.891963, -1.08184)
+car = NodePath("../ProtoTypeCar")
+
+[node name="WorldEnv" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="WorldEnv"]
+environment = SubResource("Environment_78kuh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnv"]
+transform = Transform3D(1, 0, 0, 0, -0.739467, 0.673193, 0, -0.673193, -0.739467, 0, 9.72883, 0)
 
 [node name="ParkingEnviroment" type="Node" parent="."]
 
@@ -45,15 +60,6 @@ shape = SubResource("BoxShape3D_v6s3h")
 [node name="GroundMesh" type="MeshInstance3D" parent="ParkingEnviroment/Ground"]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -1, 0)
 mesh = SubResource("BoxMesh_8iiu8")
-
-[node name="LightPole" parent="." instance=ExtResource("2_vo3ln")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, 8.59293)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_78kuh")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.739467, 0.673193, 0, -0.673193, -0.739467, 0, 9.72883, 0)
 
 [node name="WorldLimit" type="Node" parent="."]
 
@@ -744,3 +750,78 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 185.44
 
 [node name="Pole114" parent="WorldLimit/Horizontal" instance=ExtResource("3_fggjv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 185.441, 0, -189.994)
+
+[node name="LightPoles" type="Node" parent="."]
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="LightPole" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, -135.562)
+
+[node name="LightPole2" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, -71.0909)
+
+[node name="LightPole3" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, -4.54608)
+
+[node name="LightPole4" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, 58.2951)
+
+[node name="LightPole5" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.06892, 1, 135.919)
+
+[node name="LightPole6" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 100.568, 1, -135.562)
+
+[node name="LightPole7" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 100.568, 1, -71.0909)
+
+[node name="LightPole8" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 100.568, 1, -4.54608)
+
+[node name="LightPole9" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 100.568, 1, 58.2951)
+
+[node name="LightPole10" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 100.568, 1, 135.919)
+
+[node name="LightPole11" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, -135.562)
+
+[node name="LightPole12" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, -71.0909)
+
+[node name="LightPole13" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, -4.54608)
+
+[node name="LightPole14" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 58.2951)
+
+[node name="LightPole15" parent="Lights" instance=ExtResource("2_vo3ln")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 135.919)
+
+[node name="Spawner" type="Node" parent="."]
+
+[node name="Spawner" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -37.0604)
+
+[node name="Spawner2" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -34.2349)
+
+[node name="Spawner3" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -31.1814)
+
+[node name="Spawner4" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -28.1256)
+
+[node name="Spawner5" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -25.0661)
+
+[node name="Spawner6" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -22.2407)
+
+[node name="Spawner7" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -19.1871)
+
+[node name="Spawner8" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11911, 1, -16.1313)

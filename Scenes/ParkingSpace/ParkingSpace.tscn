@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://2q6gsf55le8f"]
+
+[ext_resource type="Script" path="res://Scenes/ParkingSpace/Scripts/ParkingSpace.cs" id="1_cdhvn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6lr5e"]
+size = Vector3(1.75342, 0.794122, 0.706405)
+
+[node name="ParkingSpace" type="Area3D"]
+script = ExtResource("1_cdhvn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6lr5e")
