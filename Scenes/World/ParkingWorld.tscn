@@ -2690,8 +2690,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -114.002)
 [node name="Spawner656" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -110.946)
 
-[node name="Objects" type="Node" parent="."]
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
