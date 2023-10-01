@@ -13,6 +13,8 @@ public partial class Spawner : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		//Print free parking spaces
+		GD.Print($"Free parking spaces: {this.amountOfFreeParkingSpaces}");
 		// Get all available spawners
 		spawners = GetTree().GetNodesInGroup("spawn");
 

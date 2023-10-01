@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://b4ka1pdheow3n"]
+[gd_scene load_steps=14 format=3 uid="uid://b4ka1pdheow3n"]
 
+[ext_resource type="Script" path="res://Scenes/World/Scripts/State.cs" id="1_d2e8e"]
 [ext_resource type="PackedScene" uid="uid://lav4r0bkq1ky" path="res://Models/ProtoTypeLight/LightPole.tscn" id="2_vo3ln"]
 [ext_resource type="PackedScene" uid="uid://dqql06tr1i8g1" path="res://Models/ProtoTypePole/Pole.tscn" id="3_fggjv"]
 [ext_resource type="PackedScene" uid="uid://2q6gsf55le8f" path="res://Scenes/ParkingSpace/ParkingSpace.tscn" id="4_6slbm"]
@@ -30,7 +31,8 @@ metallic = 0.03
 material = SubResource("StandardMaterial3D_wf6hc")
 size = Vector3(50, 2, 50)
 
-[node name="ParkingWorld" type="Node3D"]
+[node name="ParkingWorld" type="Node3D" groups=["root"]]
+script = ExtResource("1_d2e8e")
 
 [node name="Player" parent="." instance=ExtResource("6_hotdx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.683286, 1.21523, 13.8687)
@@ -799,6 +801,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 135.919)
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("5_yy50u")
+amountOfFreeParkingSpaces = 50
 
 [node name="Spawner" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 109.615)

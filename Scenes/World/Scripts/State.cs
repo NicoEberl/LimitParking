@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
-public partial class Player : Node3D
+public partial class State : Node3D
 {
-
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print(CurrentGameState.PrintState());
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,8 +15,15 @@ public partial class Player : Node3D
 	{
 	}
 
+
 	public void OnCarParkedIn()
 	{
-		GD.Print("Car parked in Signal received");
+		CurrentGameState.currentRound += 1;
+		CurrentGameState.currentScore += 100;
+		GD.Print(CurrentGameState.PrintState());
+
+		// Get to next round screen;
+		GetTree().ReloadCurrentScene();
 	}
 }
+

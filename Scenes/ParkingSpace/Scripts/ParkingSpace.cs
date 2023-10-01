@@ -3,32 +3,30 @@ using System;
 
 public partial class ParkingSpace : Area3D
 {
-
 	private VehicleBody3D car;
+
+	private State state;
+
+	private bool hasParkedIn = false;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		state = (State)GetTree().GetFirstNodeInGroup("root");
 		car = (VehicleBody3D)GetTree().GetFirstNodeInGroup("car");
 		if (car == null)
 		{
 			throw new Exception("no car provided in group car");
 		}
-		AddUserSignal(CustomSignalNames.CAR_PARKED_IN);
+
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		// Check if car object is in signal
-		if (OverlapsBody(car))
+		if (OverlapsBody(car) && !hasParkedIn)
 		{
-			ObjectIsInShape();
+			state.OnCarParkedIn();
+			this.hasParkedIn = true;
 		}
-
 	}
-
-	public void ObjectIsInShape()
-	{
-		EmitSignal(CustomSignalNames.CAR_PARKED_IN);
-	}
-
 }
