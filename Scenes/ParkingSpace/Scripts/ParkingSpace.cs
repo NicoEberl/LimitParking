@@ -25,8 +25,9 @@ public partial class ParkingSpace : Area3D
 		// Check if car object is in signal
 		if (OverlapsBody(car) && !hasParkedIn)
 		{
-			state.OnCarParkedIn();
 			this.hasParkedIn = true;
+			state.OnCarParkedIn();
+			GD.Print("Player has parked in!");
 		}
 	}
 }

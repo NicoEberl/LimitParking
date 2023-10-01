@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://b4ka1pdheow3n"]
+[gd_scene load_steps=15 format=3 uid="uid://b4ka1pdheow3n"]
 
 [ext_resource type="Script" path="res://Scenes/World/Scripts/State.cs" id="1_d2e8e"]
+[ext_resource type="Script" path="res://Scenes/World/Scripts/ShowTimer.cs" id="2_r3gdj"]
 [ext_resource type="PackedScene" uid="uid://lav4r0bkq1ky" path="res://Models/ProtoTypeLight/LightPole.tscn" id="2_vo3ln"]
 [ext_resource type="PackedScene" uid="uid://dqql06tr1i8g1" path="res://Models/ProtoTypePole/Pole.tscn" id="3_fggjv"]
-[ext_resource type="PackedScene" uid="uid://2q6gsf55le8f" path="res://Scenes/ParkingSpace/ParkingSpace.tscn" id="4_6slbm"]
 [ext_resource type="PackedScene" uid="uid://bsxnrt04qsm1m" path="res://Scenes/Spawner/Spawner.tscn" id="5_nr5vk"]
 [ext_resource type="Script" path="res://Scenes/World/Scripts/Spawner.cs" id="5_yy50u"]
 [ext_resource type="PackedScene" uid="uid://ck8sroulapw2r" path="res://Scenes/Player/Player.tscn" id="6_hotdx"]
+[ext_resource type="Script" path="res://Scenes/World/Scripts/GameTimer.cs" id="7_ytx86"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_ik0a2"]
 ground_color = Color(0.215686, 0.482353, 0.827451, 1)
@@ -34,11 +35,26 @@ size = Vector3(50, 2, 50)
 [node name="ParkingWorld" type="Node3D" groups=["root"]]
 script = ExtResource("1_d2e8e")
 
+[node name="TimerUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TimerUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("2_r3gdj")
+
 [node name="Player" parent="." instance=ExtResource("6_hotdx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.683286, 1.21523, 13.8687)
-
-[node name="ParkingSpace" parent="." instance=ExtResource("4_6slbm")]
-transform = Transform3D(-0.0220068, 0, 0.999758, 0, 1, 0, -0.999758, 0, -0.0220068, -0.0321765, 0.891963, -1.08184)
 
 [node name="WorldEnv" type="Node" parent="."]
 
@@ -801,7 +817,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -124.739, 1, 135.919)
 
 [node name="Spawner" type="Node" parent="."]
 script = ExtResource("5_yy50u")
-amountOfFreeParkingSpaces = 50
 
 [node name="Spawner" parent="Spawner" groups=["spawn"] instance=ExtResource("5_nr5vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.295, 1, 109.615)
@@ -2676,3 +2691,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -114.002)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.077, 1, -110.946)
 
 [node name="Objects" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+script = ExtResource("7_ytx86")
+
+[connection signal="timeout" from="Timer" to="." method="OnTimeout"]

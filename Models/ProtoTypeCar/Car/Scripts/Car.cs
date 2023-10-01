@@ -6,7 +6,7 @@ public partial class Car : VehicleBody3D
 	[Export]
 	private int speed = 1;
 	[Export]
-	private int accellaration = 100;
+	private int acceleration = 100;
 	[Export]
 	private int BRAKE_FORCE = 15;
 
@@ -22,7 +22,7 @@ public partial class Car : VehicleBody3D
 			float input = Input.GetAxis("backward", "forward");
 			float steering = Input.GetAxis("left", "right");
 
-			EngineForce = input * accellaration;
+			EngineForce = input * acceleration;
 			Steering = steering * 100;
 
 	}

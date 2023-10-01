@@ -1,12 +1,25 @@
 using Godot;
 using System;
 
+
 public partial class State : Node3D
 {
+	public ConfigFile config = new();
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Error err = config.Load("res://Config/config.cfg");
+
+		if (err != Error.Ok)
+		{
+			throw new Exception("Error loading config file. Abort!");
+		}
+		else
+		{
+			GD.Print("Successfully loaded config.cfg");
+		}
+
 		GD.Print(CurrentGameState.PrintState());
 	}
 
@@ -24,6 +37,18 @@ public partial class State : Node3D
 
 		// Get to next round screen;
 		GetTree().ReloadCurrentScene();
+	}
+
+	public void OnCollideStaticCar()
+	{
+		// TODO: Load game over
+		GetTree().ChangeSceneToFile("res://UI/LooseScreen.tscn");
+	}
+
+	public void OnTimeout()
+	{
+		GetTree().ChangeSceneToFile("res://UI/LooseScreen.tscn");
+
 	}
 }
 

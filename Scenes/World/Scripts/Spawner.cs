@@ -4,7 +4,6 @@ using System;
 
 public partial class Spawner : Node
 {
-	[Export]
 	private int amountOfFreeParkingSpaces = 30;
 	private PackedScene sceneStaticCar;
 	private PackedScene sceneFreeParkingSpace;
@@ -16,7 +15,7 @@ public partial class Spawner : Node
 		//Print free parking spaces
 		GD.Print($"Free parking spaces: {this.amountOfFreeParkingSpaces}");
 		// Get all available spawners
-		spawners = GetTree().GetNodesInGroup("spawn");
+		spawners = GetChildren();
 
 		sceneStaticCar = GD.Load<PackedScene>("res://Models/ProtoTypeStaticCar/StaticCar.tscn");
 		sceneFreeParkingSpace = GD.Load<PackedScene>("res://Scenes/ParkingSpace/ParkingSpace.tscn");
@@ -33,24 +32,28 @@ public partial class Spawner : Node
 		// Maybe scramble the array because it might get mostly the first elements free parking spaces spawned
 		spawners.Shuffle();
 
+		GD.Print(spawners.Count);
 		if (spawners.Count < amountOfFreeParkingSpaces)
 		{
 			throw new Exception("can not have more free parking spaced then spawners");
 		}
 
-		for (int i = 0; i <= amountOfFreeParkingSpaces; i++)
+		for (int i = 0; i < spawners.Count; i++)
 		{
-			var nodeFreeParkingSpace = sceneFreeParkingSpace.Instantiate();
-			spawners[i].AddChild(nodeFreeParkingSpace);
+			if (i <= amountOfFreeParkingSpaces - 1)
+			{
+				var nodeFreeParkingSpace = sceneFreeParkingSpace.Instantiate();
+				spawners[i].AddChild(nodeFreeParkingSpace);
 
-			GD.Print("Create free parking space");
+				GD.Print("Create free parking space");
+			}
+			else
+			{
+				var nodeStaticCar = sceneStaticCar.Instantiate();
+				spawners[i].AddChild(nodeStaticCar);
+			}
 		}
 
-		for (int i = amountOfFreeParkingSpaces +1; i < spawners.Count; i++)
-		{
-			var nodeStaticCar = sceneStaticCar.Instantiate();
-			spawners[i].AddChild(nodeStaticCar);
-		}
 
 	}
 }
