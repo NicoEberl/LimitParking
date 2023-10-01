@@ -4,7 +4,7 @@ using System;
 
 public partial class Spawner : Node
 {
-	private int amountOfFreeParkingSpaces = 30;
+	private int amountOfFreeParkingSpaces = 100;
 	private PackedScene sceneStaticCar;
 	private PackedScene sceneFreeParkingSpace;
 
@@ -24,7 +24,6 @@ public partial class Spawner : Node
 		SpawnInParkingSpace();
 
 	}
-
 
 	public void SpawnInParkingSpace()
 	{

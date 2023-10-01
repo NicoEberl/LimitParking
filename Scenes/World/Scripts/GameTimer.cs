@@ -6,7 +6,7 @@ public partial class GameTimer : Timer
 {
 
 	private ConfigFile config = new();
-	private int initTime;
+	private double initTime;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,7 +18,7 @@ public partial class GameTimer : Timer
 		}
 
 		GD.Print(config.GetSectionKeys("game"));
-		initTime = config.GetValue("game","init_time").AsInt16();
+		initTime = CurrentGameState.time;
 
 		WaitTime = initTime;
 	}
