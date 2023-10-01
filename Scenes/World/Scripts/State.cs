@@ -15,11 +15,6 @@ public partial class State : Node3D
 		{
 			throw new Exception("Error loading config file. Abort!");
 		}
-		else
-		{
-			GD.Print("Successfully loaded config.cfg");
-		}
-
 		GD.Print(CurrentGameState.PrintState());
 	}
 

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://djb1oupryagia"]
+[gd_scene load_steps=3 format=3 uid="uid://djb1oupryagia"]
+
+[ext_resource type="Script" path="res://UI/MainMenu.cs" id="1_cns4l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_55jtn"]
 font_size = 50
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cns4l")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -37,3 +40,5 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 text = "Start"
 flat = true
+
+[connection signal="pressed" from="VBoxContainer/StartGame" to="." method="OnStartPressed"]
